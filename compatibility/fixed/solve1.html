@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>输入框fixed在底部</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    header,
+    footer,
+    main {
+        display: block;
+    }
+
+    header,footer {
+        position: absolute;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        background: gray;
+        text-align: center;
+    }
+
+    header {
+        top: 0;
+        z-index: 1;
+    }
+
+    footer {
+        bottom: 0;
+        /* z-index: 1; */
+    }
+
+    main {
+        box-sizing: border-box;
+        height: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .bigtext {
+        font-size: 100px;
+        text-align: center;
+    }
+
+    .ipt{
+        margin-top: 15px;
+    }
+</style>
+
+<body class="layout-fixed">
+    <!-- absolute header -->
+    <header>
+        <input class="ipt" type="text" placeholder="Header..." />
+    </header>
+
+    <!-- scrollable container -->
+    <main>
+        <!-- 内容在这里... -->
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+        <p class="bigtext">bigText</p>
+    </main>
+
+    <!-- absolute footer -->
+    <footer>
+        <input class="ipt" type="text" placeholder="Footer..." />
+    </footer>
+</body>
+
+</html>
