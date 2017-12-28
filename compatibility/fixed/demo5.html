@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>body can scroll,header footer fixed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<style>
+    body,
+    html {
+        height: 2000vh;
+    }
+
+    .hd {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        padding: 10px 20px;
+        background: gray;
+    }
+
+    .ft {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        padding: 10px 20px;
+        background: gray;
+    }
+
+    .ipt {
+        font-size: 16px;
+    }
+</style>
+
+<body>
+    <header class="hd">
+        <input class="ipt" />
+    </header>
+    <footer class="ft">
+        <input id="lzy" class="ipt" />
+    </footer>
+    <script>
+        var timerId
+        
+        lzy.onfocus = function (e) {
+            // var cnt = 0;
+            // timerId = setInterval(() => {
+            //     if (cnt < 3) {
+            //         cnt++;
+            //     } else {
+            //         clearInterval(timerId);
+            //         timerId = null;
+            //         return;
+            //     }
+            //     document.body.scrollTop = document.body.scrollHeight;
+            // }, 30);
+
+            setTimeout(() => {
+                document.documentElement.scrollIntoView(false)
+                // document.documentElement.scrollTop = 99999
+                // e.target.scrollIntoView(true);
+            }, 500);
+        }
+
+        lzy.onblur = function () {
+            // if (timerId) {
+            //     clearInterval(timerId);
+            //     timerId = null;
+            // }
+        }
+    </script>
+</body>
+
+</html>
