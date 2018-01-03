@@ -383,9 +383,12 @@
       transform-origin: 100% 0;
     }
   }
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     html {
       font-size: 125%;
     }
+  } */
+  html{
+    font-size: 45px;
   }
   
