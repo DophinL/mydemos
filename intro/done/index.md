@@ -35,7 +35,7 @@
 | edu-front-util/util                      | 实用工具函数                                 |
 | generator-k12                            | k12脚手架                                 |
 | sentry                                   | 异常监控平台接入                               |
-| scss异常查找工具                               | 在打包阶段，通过正则匹配发现scss编译报错，以防止线上异常         |
+| [scss异常查找工具](https://www.jianshu.com/p/84ed7ccd724b) | 在打包阶段，通过正则匹配发现scss编译报错，以防止线上异常         |
 | 自动sync文件工具                               | 由于nej模块引用路径的问题，需要把一些模块文件从lib里同步到指定的目录下 |
 | 多行添加省略号scss mixin [demo](https://codepen.io/Dophin/pen/ZxbdqG) | 多行添加省略号scss mixin                      |
 
