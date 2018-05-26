@@ -148,6 +148,7 @@ span.mr_women i.active{background-position:-27px -5px;}
 .mr_add_m .sns10{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -467px 3px no-repeat;}
 .mr_add_m .sns11{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -518px 3px no-repeat;}
 .mr_add_m .sns12{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -570px 3px no-repeat;}
+.mr_add_m .sns13{background:url(http://7xokyg.com1.z0.glb.clouddn.com/CN_jianshu.png) !important;background-size:cover !important;}
 
 .mr_add_m .sns1.active{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -1px -43px no-repeat;}
 .mr_add_m .sns2.active{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -54px  -43px no-repeat;}
@@ -161,6 +162,7 @@ span.mr_women i.active{background-position:-27px -5px;}
 .mr_add_m .sns10.active{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -467px  -43px no-repeat;}
 .mr_add_m .sns11.active{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -518px  -43px no-repeat;}
 .mr_add_m .sns12.active{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -570px  -43px no-repeat;}
+
 .mr_add_op{padding:10px 0;margin-left:-20px;background-color:#fafafa;}
 .mr_add_op a{vertical-align:middle;}
 .mr_add_op .mr_none_my{float:left;color:#b5b5b5;padding:6px 0;margin-left:20px;}
@@ -301,6 +303,7 @@ content:"...";
 .mr_sns .sns10,.mr_sns_m .sns10,.mr_add_m .sns10{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -469px -5px no-repeat;}
 .mr_sns .sns11,.mr_sns_m .sns11,.mr_add_m .sns11{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -520px -5px no-repeat;}
 .mr_sns .sns12,.mr_sns_m .sns12,.mr_add_m .sns12{background:url(http://www.lagou.com/images/myresume/sns_bg.png) -572px -5px no-repeat;}
+.mr_sns .sns13,.mr_sns_m .sns13,.mr_add_m .sns13{background:url(http://7xokyg.com1.z0.glb.clouddn.com/CN_jianshu.png) !important;background-size:cover !important;}
 .mr_infoed .mr_sns{text-align:center;padding-top:20px;}
 #projectExperience .mr_content_l .l2{padding-top:4px;}
 .mr_ope .mr_delete{position:relative;cursor:pointer;float:right;font-size:16px;color:#ff685e;margin-top:13px;}
@@ -355,10 +358,7 @@ content:"...";
 	top:39px;
 	z-index:100;
 }
-.jianshu{
-    background:url(http://7xokyg.com1.z0.glb.clouddn.com/CN_jianshu.png);
-    background-size:cover;
-}
+
 </style>
 	<div class="clearfixs mr_created mr_preview">
 		<div class="mr_myresume_l mrcenter">
@@ -399,7 +399,7 @@ content:"...";
 						<!--   -------------------社交账号     -----------------       -->
 							<a href="https://github.com/DophinL" target="_blank" data-sns="6" data-site="https://github.com/DophinL"><span><em></em></span></a>
 							<a href="https://www.zhihu.com/people/dophin" target="_blank" data-sns="7" data-site="https://www.zhihu.com/people/dophin"><span><em></em></span></a>
-                            <a href="https://www.jianshu.com/u/bd493e0a0cfb" target="_blank" class="jianshu" data-site="https://www.jianshu.com/u/bd493e0a0cfb"><span><em></em></span></a>
+                            <a href="https://www.jianshu.com/u/bd493e0a0cfb" target="_blank" data-sns="13" data-site="https://www.jianshu.com/u/bd493e0a0cfb"><span><em></em></span></a>
 						</div>
 					</div>
 				</div>
@@ -737,6 +737,11 @@ content:"...";
 		  				case 12:
 		  					var b = document.createTextNode("StackoverFlow");
 		  					_this.addClass("sns12");
+		  					break;
+
+                              case 13:
+		  					var b = document.createTextNode("简书");
+		  					_this.addClass("sns13");
 		  					break;
 					}
 					_span.prepend($(b)).css("marginLeft",-(_span.width()+20)/2+"px");
