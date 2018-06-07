@@ -97,7 +97,6 @@ processor主要做的事情就是：定义这个业务范畴需要派发的消�
  * xxx处理器
  *
  * @version  1.0
- * @author   hzliuzongyuan <hzliuzongyuan@corp.netease.com>
  * @module   pool/cache-im/src/im/processors/xxxProcessor
  */
 NEJ.define([
