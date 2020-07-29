@@ -10,7 +10,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './App.css';
 import { getMatch, generateAllContent } from './alg';
 
-const COL_NUM = 6;
+const COL_NUM = 7;
 
 const Header = ({ col }) => {
   return <th style={{ width: col.width }}>{col.label}</th>
@@ -65,9 +65,13 @@ function DescRow({ id, choosen, dataSource }) {
   )
 }
 
-function buildGrid(row, col) {
-  return new Array(row).fill(0).map(arr => {
-    return new Array(col).fill(0).map(() => {
+function buildGrid(row, col, startRow = 0) {
+  return new Array(row).fill(0).map((arr, rowIndex) => {
+    return new Array(col).fill(0).map((item, colIndex) => {
+      if(colIndex === 0){
+        return { readOnly: true, value: startRow + rowIndex + 1 }
+      }
+
       return {
         value: ''
       }
@@ -75,7 +79,7 @@ function buildGrid(row, col) {
   })
 }
 
-const columns = [{ label: '男主/女主', width: '200px' },
+const columns = [{label: '', width: '80px'}, { label: '男主/女主', width: '200px' },
 { label: '选择1', width: '200px' },
 { label: '选择2', width: '200px' },
 { label: '选择3', width: '200px' },
@@ -114,13 +118,15 @@ function App() {
 
   const addNewRow = useCallback(() => {
     const _grid = grid.map(row => [...row])
-    setGrid(_grid.concat(buildGrid(1, COL_NUM)));
+    const res = _grid.concat(buildGrid(1, COL_NUM, _grid.length));
+    setGrid(res);
+    localStore.set('grid', res)
   }, [grid])
 
-  const existRows = grid.filter(row => !!row[0].value.trim());
+  const existRows = grid.filter(row => !!row[1].value.trim());
   const ds = existRows.map(row => ({
-    id: row[0].value,
-    choosen: row.slice(1).map(col => col.value.trim())
+    id: row[1].value,
+    choosen: row.slice(2).map(col => col.value.trim())
   }))
 
   return (
@@ -163,7 +169,7 @@ function App() {
             {
               existRows.map((row, index) => {
                 const choosen = row.slice(1).map((item) => item.value);
-                return <DescRow key={index} id={row[0].value} choosen={choosen} dataSource={ds}></DescRow>
+                return <DescRow key={index} id={row[1].value} choosen={choosen} dataSource={ds}></DescRow>
               })
             }
           </Modal>
