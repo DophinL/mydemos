@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.2.1",
     "antd": "^4.5.1",
     "cra-template": "1.0.3",
     "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-datasheet": "^1.4.7",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",

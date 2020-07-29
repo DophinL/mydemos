@@ -1,5 +1,5 @@
 .App {
-
+  padding: 20px;
 }
 
 .wrapper{
@@ -10,4 +10,8 @@
 .ant-modal-body{
   max-height: 500px !important;
   overflow: auto;
+}
+
+.button-group{
+  margin: 20px 0;
 }
