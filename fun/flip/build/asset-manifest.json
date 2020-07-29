@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mydemos/fun/flip/build/static/css/main.abc67127.chunk.css",
+    "main.js": "/mydemos/fun/flip/build/static/js/main.796a717a.chunk.js",
+    "main.js.map": "/mydemos/fun/flip/build/static/js/main.796a717a.chunk.js.map",
+    "runtime-main.js": "/mydemos/fun/flip/build/static/js/runtime-main.ec47a68b.js",
+    "runtime-main.js.map": "/mydemos/fun/flip/build/static/js/runtime-main.ec47a68b.js.map",
+    "static/css/2.83fe5f62.chunk.css": "/mydemos/fun/flip/build/static/css/2.83fe5f62.chunk.css",
+    "static/js/2.0a9dcc34.chunk.js": "/mydemos/fun/flip/build/static/js/2.0a9dcc34.chunk.js",
+    "static/js/2.0a9dcc34.chunk.js.map": "/mydemos/fun/flip/build/static/js/2.0a9dcc34.chunk.js.map",
+    "index.html": "/mydemos/fun/flip/build/index.html",
+    "precache-manifest.c7a8ef3b507d713be6374cea2c8fd996.js": "/mydemos/fun/flip/build/precache-manifest.c7a8ef3b507d713be6374cea2c8fd996.js",
+    "service-worker.js": "/mydemos/fun/flip/build/service-worker.js",
+    "static/css/2.83fe5f62.chunk.css.map": "/mydemos/fun/flip/build/static/css/2.83fe5f62.chunk.css.map",
+    "static/css/main.abc67127.chunk.css.map": "/mydemos/fun/flip/build/static/css/main.abc67127.chunk.css.map",
+    "static/js/2.0a9dcc34.chunk.js.LICENSE.txt": "/mydemos/fun/flip/build/static/js/2.0a9dcc34.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec47a68b.js",
+    "static/css/2.83fe5f62.chunk.css",
+    "static/js/2.0a9dcc34.chunk.js",
+    "static/css/main.abc67127.chunk.css",
+    "static/js/main.796a717a.chunk.js"
+  ]
+}

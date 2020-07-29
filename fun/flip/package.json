@@ -11,6 +11,7 @@
     "react-scripts": "3.4.1",
     "store2": "^2.11.2"
   },
+  "homepage": "https://dophinl.github.io/mydemos/fun/flip/build",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
