@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mydemos/fun/flip/build/static/css/main.ba3c26f5.chunk.css",
-    "main.js": "/mydemos/fun/flip/build/static/js/main.8c70bf00.chunk.js",
-    "main.js.map": "/mydemos/fun/flip/build/static/js/main.8c70bf00.chunk.js.map",
+    "main.js": "/mydemos/fun/flip/build/static/js/main.15033b5e.chunk.js",
+    "main.js.map": "/mydemos/fun/flip/build/static/js/main.15033b5e.chunk.js.map",
     "runtime-main.js": "/mydemos/fun/flip/build/static/js/runtime-main.ec47a68b.js",
     "runtime-main.js.map": "/mydemos/fun/flip/build/static/js/runtime-main.ec47a68b.js.map",
     "static/css/2.9e847b13.chunk.css": "/mydemos/fun/flip/build/static/css/2.9e847b13.chunk.css",
     "static/js/2.3d403c50.chunk.js": "/mydemos/fun/flip/build/static/js/2.3d403c50.chunk.js",
     "static/js/2.3d403c50.chunk.js.map": "/mydemos/fun/flip/build/static/js/2.3d403c50.chunk.js.map",
     "index.html": "/mydemos/fun/flip/build/index.html",
-    "precache-manifest.ddd418c0eb8d926fbbe28a9eac01de8b.js": "/mydemos/fun/flip/build/precache-manifest.ddd418c0eb8d926fbbe28a9eac01de8b.js",
+    "precache-manifest.38504db486136ecd4ee7cf4c637d5fc0.js": "/mydemos/fun/flip/build/precache-manifest.38504db486136ecd4ee7cf4c637d5fc0.js",
     "service-worker.js": "/mydemos/fun/flip/build/service-worker.js",
     "static/css/2.9e847b13.chunk.css.map": "/mydemos/fun/flip/build/static/css/2.9e847b13.chunk.css.map",
     "static/css/main.ba3c26f5.chunk.css.map": "/mydemos/fun/flip/build/static/css/main.ba3c26f5.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.9e847b13.chunk.css",
     "static/js/2.3d403c50.chunk.js",
     "static/css/main.ba3c26f5.chunk.css",
-    "static/js/main.8c70bf00.chunk.js"
+    "static/js/main.15033b5e.chunk.js"
   ]
 }

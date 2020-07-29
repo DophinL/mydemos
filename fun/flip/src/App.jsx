@@ -40,14 +40,15 @@ class SheetRenderer extends PureComponent {
 
 function DescRow({ id, choosen, dataSource }) {
   const { chooseMe, mrsRight } = getMatch(id, choosen, dataSource);
-  let content = ``
+  let content = ``;
+  const prefix = <span><Avatar style={{ marginRight: '4px' }} icon={<UserOutlined />} size="small"></Avatar>{id}：</span>
 
   if (chooseMe.length === 0) {
-    content = `${id}：很遗憾没有人选您，考虑一下内部消化？`
+    content = (<span>{prefix}很遗憾没有人选您，考虑一下内部消化？</span>);
   } else {
     content = (
       <span>
-        <Avatar style={{ marginRight: '4px' }} icon={<UserOutlined />} size="small"></Avatar>{id}： 被 <span style={{ color: '#0055ff' }}>{chooseMe.join(',')}</span> 等 <span style={{ color: '#999' }}>{chooseMe.length}</span> 人选择
+        {prefix}被 <span style={{ color: '#0055ff' }}>{chooseMe.join(',')}</span> 等 <span style={{ color: '#999' }}>{chooseMe.length}</span> 人选择
         {mrsRight.length > 0 ? (
           <span>
             ，而且，你心动的 <span style={{ color: '#0055ff' }}>{mrsRight.join(',')}</span> 也选择了你！！！

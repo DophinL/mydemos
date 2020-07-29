@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de0675cb9a31637bb1ff323d4e930a02",
+    "revision": "c17dac1a65931cfda5f2c9ac0bb691f0",
     "url": "/mydemos/fun/flip/build/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mydemos/fun/flip/build/static/css/2.9e847b13.chunk.css"
   },
   {
-    "revision": "35229d9053ce548e45b6",
+    "revision": "be445c15876846f32f17",
     "url": "/mydemos/fun/flip/build/static/css/main.ba3c26f5.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mydemos/fun/flip/build/static/js/2.3d403c50.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "35229d9053ce548e45b6",
-    "url": "/mydemos/fun/flip/build/static/js/main.8c70bf00.chunk.js"
+    "revision": "be445c15876846f32f17",
+    "url": "/mydemos/fun/flip/build/static/js/main.15033b5e.chunk.js"
   },
   {
     "revision": "61c1012ba4c69475bae5",
