@@ -55,7 +55,7 @@ function DescRow({ id, choosen, dataSource }) {
             而且，你心动的 <span style={{ color: '#0055ff' }}>{mrsRight.join(',')}</span> 也选择了你！！！
           </span>
         ) : null}
-        <br/>
+        <br />
         {generatePriorityContent(id, choosen, dataSource, true)}
       </span>
     );
@@ -119,6 +119,17 @@ function App() {
     localStore.set('grid', _grid)
   }, [grid])
 
+  const removeLocalStore = useCallback(() => {
+    Modal.confirm({
+      content: '确定要清除本地数据吗？不可恢复',
+      title: '确认',
+      onOk: () => {
+        localStore.remove('grid')
+        setGrid(buildGrid(600, COL_NUM));
+      }
+    })
+  }, [])
+
   const addNewRow = useCallback(() => {
     const _grid = grid.map(row => [...row])
     const res = _grid.concat(buildGrid(1, COL_NUM, _grid.length));
@@ -147,7 +158,10 @@ function App() {
         </Button>
         <Button style={{ marginLeft: '20px' }} type="primary" size="large" onClick={addNewRow}>
           新增行
-      </Button>
+        </Button>
+        <Button style={{ marginLeft: '20px' }} size="large" onClick={removeLocalStore}>
+          清除本地缓存
+        </Button>
       </div>
       <div className="wrapper">
         <ReactDataSheet
