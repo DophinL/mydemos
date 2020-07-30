@@ -8,7 +8,8 @@ import { UserOutlined } from '@ant-design/icons';
 import store from 'store2';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './App.css';
-import { getMatch, generateAllContent } from './alg';
+import { getMatch, generateAllContent, generatePriorityContent, generateRowContent } from './util';
+import Em from './Em';
 
 const COL_NUM = 7;
 
@@ -41,25 +42,27 @@ class SheetRenderer extends PureComponent {
 function DescRow({ id, choosen, dataSource }) {
   const { chooseMe, mrsRight } = getMatch(id, choosen, dataSource);
   let content = ``;
-  const prefix = <span><Avatar style={{ marginRight: '4px' }} icon={<UserOutlined />} size="small"></Avatar>{id}：</span>
+  const prefix = <span><Avatar style={{ marginRight: '4px' }} icon={<UserOutlined />} size="small"></Avatar>{id}：选择了 <Em>{choosen.join('，')}</Em>。</span>
 
   if (chooseMe.length === 0) {
     content = (<span>{prefix}很遗憾没有人选您，考虑一下内部消化？</span>);
   } else {
     content = (
       <span>
-        {prefix}被 <span style={{ color: '#0055ff' }}>{chooseMe.join(',')}</span> 等 <span style={{ color: '#999' }}>{chooseMe.length}</span> 人选择
+        {prefix}被 <span style={{ color: '#0055ff' }}>{chooseMe.join(',')}</span> 等 <span style={{ color: '#999' }}>{chooseMe.length}</span> 人选择。
         {mrsRight.length > 0 ? (
           <span>
-            ，而且，你心动的 <span style={{ color: '#0055ff' }}>{mrsRight.join(',')}</span> 也选择了你！！！
+            而且，你心动的 <span style={{ color: '#0055ff' }}>{mrsRight.join(',')}</span> 也选择了你！！！
           </span>
         ) : null}
+        <br/>
+        {generatePriorityContent(id, choosen, dataSource, true)}
       </span>
     );
   }
 
   return (
-    <p>{content} <CopyToClipboard text={content}>
+    <p>{content} <CopyToClipboard text={generateRowContent(id, choosen, dataSource)}>
       <Button style={{ marginLeft: '10px' }} type="primary" size="small">复制</Button>
     </CopyToClipboard></p>
   )
@@ -68,7 +71,7 @@ function DescRow({ id, choosen, dataSource }) {
 function buildGrid(row, col, startRow = 0) {
   return new Array(row).fill(0).map((arr, rowIndex) => {
     return new Array(col).fill(0).map((item, colIndex) => {
-      if(colIndex === 0){
+      if (colIndex === 0) {
         return { readOnly: true, value: startRow + rowIndex + 1 }
       }
 
@@ -79,7 +82,7 @@ function buildGrid(row, col, startRow = 0) {
   })
 }
 
-const columns = [{label: '', width: '80px'}, { label: '男主/女主', width: '200px' },
+const columns = [{ label: '', width: '80px' }, { label: '男主/女主', width: '200px' },
 { label: '选择1', width: '200px' },
 { label: '选择2', width: '200px' },
 { label: '选择3', width: '200px' },
@@ -126,7 +129,7 @@ function App() {
   const existRows = grid.filter(row => !!row[1].value.trim());
   const ds = existRows.map(row => ({
     id: row[1].value,
-    choosen: row.slice(2).map(col => col.value.trim())
+    choosen: row.slice(2).map(col => col.value.trim()).filter(col => !!col)
   }))
 
   return (
@@ -167,9 +170,8 @@ function App() {
               <Button style={{ margin: '0 0 10px' }} type="primary">一键复制全部信息</Button>
             </CopyToClipboard>
             {
-              existRows.map((row, index) => {
-                const choosen = row.slice(1).map((item) => item.value);
-                return <DescRow key={index} id={row[1].value} choosen={choosen} dataSource={ds}></DescRow>
+              ds.map((row, index) => {
+                return <DescRow key={index} id={row.id} choosen={row.choosen} dataSource={ds}></DescRow>
               })
             }
           </Modal>
