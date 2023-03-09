@@ -96,9 +96,7 @@
                 const { channel, redirectUrl, subscription, title } = query;
                 if (!channel || !redirectUrl) return;
 
-                window.addEventListener("beforeunload", function () {
-                  debugger;
-                    window.posthog.capture(
+                window.posthog.capture(
                         "read",
                         {
                             channel,
@@ -106,16 +104,16 @@
                             title,
                         },
                         {
-                            sendBeacon: true,
-                            send_instantly: true,
+                            // sendBeacon: true,
+                            // send_instantly: true,
                             transport: 'sendBeacon'
                         }
                     );
-                });
 
-                Promise.resolve(true).then(() => {
-                    location.href = redirectUrl;
-                });
+                setTimeout(() => {
+                  window.location.href = redirectUrl;
+                }, 300)
+
             }
 
             main();
