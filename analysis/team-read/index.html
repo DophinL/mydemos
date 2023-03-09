@@ -95,22 +95,25 @@
                 const query = getUrlParams();
                 const { channel, redirectUrl, subscription, title } = query;
                 if (!channel || !redirectUrl) return;
-                window.posthog.capture(
-                    "read",
-                    {
-                        channel,
-                        subscription,
-                        title,
-                    },
-                    {
-                        sendBeacon: true,
-                        send_instantly: true,
-                    }
-                );
 
-                Promise.resolve(true).then(() => {
-                    location.href = redirectUrl;
+                window.addEventListener("beforeunload", function () {
+                    window.posthog.capture(
+                        "read",
+                        {
+                            channel,
+                            subscription,
+                            title,
+                        },
+                        {
+                            sendBeacon: true,
+                            send_instantly: true,
+                        }
+                    );
                 });
+
+                // Promise.resolve(true).then(() => {
+                location.href = redirectUrl;
+                // });
             }
 
             main();
