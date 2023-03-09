@@ -97,6 +97,7 @@
                 if (!channel || !redirectUrl) return;
 
                 window.addEventListener("beforeunload", function () {
+                  debugger;
                     window.posthog.capture(
                         "read",
                         {
@@ -111,9 +112,9 @@
                     );
                 });
 
-                // Promise.resolve(true).then(() => {
-                location.href = redirectUrl;
-                // });
+                Promise.resolve(true).then(() => {
+                    location.href = redirectUrl;
+                });
             }
 
             main();
