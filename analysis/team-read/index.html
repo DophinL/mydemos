@@ -93,27 +93,26 @@
 
             function main() {
                 const query = getUrlParams();
-                const { channel, redirectUrl, subscription, title } = query;
-                if (!channel || !redirectUrl) return;
+                const { feed_source, redirect_url, target, title } = query;
+                if (!feed_source || !redirect_url) return;
 
                 window.posthog.capture(
-                        "read",
-                        {
-                            channel,
-                            subscription,
-                            title,
-                        },
-                        {
-                            // sendBeacon: true,
-                            send_instantly: true,
-                            // transport: 'sendBeacon'
-                        }
-                    );
+                    "read",
+                    {
+                        feed_source,
+                        target,
+                        title,
+                    },
+                    {
+                        // sendBeacon: true,
+                        send_instantly: true,
+                        // transport: 'sendBeacon'
+                    }
+                );
 
                 setTimeout(() => {
-                  window.location.href = redirectUrl;
-                }, 300)
-
+                    window.location.href = redirectUrl;
+                }, 300);
             }
 
             main();
